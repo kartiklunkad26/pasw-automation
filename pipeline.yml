@@ -6,7 +6,7 @@ resource_types:
     tag: latest-final
 
 resources:
-- name: pcf-pipelines
+- name: pasw-automation
   type: git
   source:
     uri: git@github.com:kartiklunkad26/pasw-automation.git
@@ -32,7 +32,7 @@ resources:
 jobs:
 - name: build-pasw-injected
   plan:
-  - get: pcf-pipelines
+  - get: pasw-automation
     trigger: true
   - get: pivnet-pasw
     params:
@@ -43,9 +43,9 @@ jobs:
       globs:
       - "*injector*"
   - task: build-injected-pasw
-    file: pcf-pipelines/deploy-pasw/tasks/build-injected-pasw/task.yml
+    file: pasw-automation/tasks/build-injected-pasw/task.yml
   - task: upload-injected-pasw
-    file: pcf-pipelines/deploy-pasw/tasks/upload-injected-pasw/task.yml
+    file: pasw-automation/tasks/upload-injected-pasw/task.yml
     params:
       OPSMAN_DOMAIN_OR_IP_ADDRESS: {{opsman_domain_or_ip_address}}
       OPSMAN_CLIENT_ID: ""

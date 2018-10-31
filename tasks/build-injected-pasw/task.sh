@@ -19,3 +19,7 @@ cd ../pivnet-winfs-injector
 ./winfs-injector-linux --input-tile ../pivnet-pasw/$FILE_PATH --output-tile ../pasw-injected/$FILE_PATH
 
 ls -ltr
+cd ..
+ls -ltr
+cd pasw-injected
+ls -ltr

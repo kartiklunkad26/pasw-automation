@@ -4,6 +4,12 @@ set -eu
 
 echo "Entering Upload Injected PASW Task"
 
+ls -ltr
+
+cd pasw-injected
+
+ls -ltr
+
 FILE_PATH=`find ./pasw-injected -name *.pivotal | sort | head -1`
 
 if [[ -n "$FILE_PATH" ]]; then

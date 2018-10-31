@@ -30,7 +30,7 @@ resources:
     sort_by: semver
 
 jobs:
-- name: build-pasw-injected
+- name: build-upload-pasw-injected
   plan:
   - get: pasw-automation
     trigger: true
@@ -48,10 +48,6 @@ jobs:
     file: pasw-automation/tasks/upload-injected-pasw/task.yml
     params:
       OPSMAN_DOMAIN_OR_IP_ADDRESS: {{opsman_domain_or_ip_address}}
-      OPSMAN_CLIENT_ID: ""
-      OPSMAN_CLIENT_SECRET: ""
       OPS_MGR_USR: {{opsman_admin_username}}
       OPS_MGR_PWD: {{opsman_admin_password}}
       PIVNET_API_TOKEN: {{pivnet_token}}
-      NO_PROXY: ""
-      OM_IP: ""

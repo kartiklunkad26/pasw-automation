@@ -4,11 +4,6 @@ set -eu
 
 echo "Entering Upload Injected PASW Task"
 
-if [[ -n "$NO_PROXY" ]]; then
-  echo "$OM_IP $OPSMAN_DOMAIN_OR_IP_ADDRESS" >> /etc/hosts
-fi
-
-# Should the slug contain more than one product, pick only the first.
 FILE_PATH=`find ./pasw-injected -name *.pivotal | sort | head -1`
 
 om-linux -t https://$OPSMAN_DOMAIN_OR_IP_ADDRESS \

@@ -6,7 +6,7 @@ echo "Entering Upload Injected PASW Task"
 
 cd pasw-injected
 
-FILE_PATH=`find "./pasw-injected" -name '*.pivotal' | sort | head -1`
+FILE_PATH=`find -name '*.pivotal' | sort | head -1`
 
 echo $FILE_PATH
 
